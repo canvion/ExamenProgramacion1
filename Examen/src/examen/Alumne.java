@@ -51,28 +51,33 @@ public class Alumno {
         return nota; 
         
     }
-	public static void delete_notes (ArrayList<notas> notas) {
-		Scanner teclat = new Scanner(System.in);
-		System.out.println("Introduce la id de la nota que quieres eliminar ");
-		String isbn = teclat.nextLine();
+	public static void delete_notes(ArrayList<Alumne> notes) {
+	    Scanner teclat = new Scanner(System.in); // 
+	    System.out.println("Introduce la ID del alumno cuya nota quieres eliminar: ");
+	    int id;
+	    
+	    System.out.println("Introduce la id de la nota que quieres eliminar: ");
+	    id=teclat.nextInt();
 
-		boolean found = false;
-		int i = 0;
-		while (!found && i<notas.size()) {
-			if (lista.get(i).getIsbn().equals(isbn)) {
-				lista.remove(i);
-				found = true;
-			}
-			i++;
-		}
-		if (found) {
-			System.out.println("nota eliminado.");
-		}else {
-			System.out.println("No se ha encontrado el id de la nota que quieres elimnar");
-		}
-	}
-	
-	
+	    boolean found = false;
+
+	    for (int i = 0; i < notes.size(); i++) {
+	        if (notes.get(i).getId() == id) { 
+	            notes.remove(i);
+	            found = true;
+	            i--; 	        
+	            }
+	    }
+
+	    if (found) {
+	        System.out.println("Nota eliminada.");
+	    } else {
+	        System.out.println("No se ha encontrado la id de la nota que quieres eliminar.");
+	    }
+
+	    teclat.close();
+	 
+    } 	
 
 	//Getters y Setters
     	public int getId() {
