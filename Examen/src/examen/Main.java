@@ -31,9 +31,15 @@ public class Main {
 			} else if (eleccion == 2) {
 				System.out.println(alumnos.toString());
 			} else if (eleccion == 3) {
+				System.out.println("Introduce la ID del alumno a modificar la nota");
+				int id = input.nextInt();
 				System.out.print("Introduce la nota a añadir: ");
 				float nota = input.nextFloat();
-				
+				for (int j = 0; j < alumnos.size(); j++) {
+					if (alumnos.get(j).getId() == id) {
+						alumnos.get(j).afegir_notes(nota);
+					}
+				}
 			} else if (eleccion == 4) {
 				
 			} else if (eleccion == 5) {
