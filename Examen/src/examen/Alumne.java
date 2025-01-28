@@ -19,7 +19,7 @@ public class Alumno {
 	
 	//Métodos
 	
-	public static float afegi_notes(Scanner teclado, String mensaje) {
+	public static float afegir_notes(Scanner teclado, String mensaje) {
 		System.out.print("introduce nota: ");
         float nota = 0; 
         boolean esValida = false; 
@@ -36,15 +36,27 @@ public class Alumno {
         return nota; 
         
     }
-	    public static float eliminar_notes(Scanner teclado, String mensaje) {
-    boolean esValida = false; 
-    while (!esValida) { 
-    	for(int i=0; i< notes(); i++) {
-    		if (i=teclado) {
-    			
-    		}
-    	}
-    }	
+	public static void delete_notes (ArrayList<Alumne> lista) {
+		Scanner teclat = new Scanner(System.in);
+
+		System.out.println("Introduce el ISBN del libro que quieres borrar: ");
+		String isbn = teclat.nextLine();
+
+		boolean found = false;
+		int i = 0;
+		while (!found && i<lista.size()) {
+			if (lista.get(i).getIsbn().equals(isbn)) {
+				lista.remove(i);
+				found = true;
+			}
+			i++;
+		}
+		if (found) {
+			System.out.println("Libro eliminado.");
+		}else {
+			System.out.println("No se ha encontrado ningún libro con ese ISBN.");
+		}
+	}
 	
 	
 
