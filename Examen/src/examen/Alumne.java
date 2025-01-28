@@ -36,15 +36,14 @@ public class Alumno {
         return nota; 
         
     }
-	public static void delete_notes (ArrayList<Alumne> lista) {
+	public static void delete_notes (ArrayList<notas> notas) {
 		Scanner teclat = new Scanner(System.in);
-
-		System.out.println("Introduce el ISBN del libro que quieres borrar: ");
+		System.out.println("Introduce la id de la nota que quieres eliminar ");
 		String isbn = teclat.nextLine();
 
 		boolean found = false;
 		int i = 0;
-		while (!found && i<lista.size()) {
+		while (!found && i<notas.size()) {
 			if (lista.get(i).getIsbn().equals(isbn)) {
 				lista.remove(i);
 				found = true;
@@ -52,9 +51,9 @@ public class Alumno {
 			i++;
 		}
 		if (found) {
-			System.out.println("Libro eliminado.");
+			System.out.println("nota eliminado.");
 		}else {
-			System.out.println("No se ha encontrado ningún libro con ese ISBN.");
+			System.out.println("No se ha encontrado el id de la nota que quieres elimnar");
 		}
 	}
 	
