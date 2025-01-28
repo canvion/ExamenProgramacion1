@@ -27,24 +27,23 @@ public class Alumno {
 	
 
 	//Getters y Setters
-	public int getId() {
-		return this.id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getNombre() {
-		return this.nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public ArrayList<Float> getNotas() {
-		return this.notas;
-	}
-	public void setNotas(ArrayList<Float> notas) {
-		this.notas = notas;
-	}
+    public int getId() {
+        return id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        if (nom !=null && !nom.isEmpty()) {
+            this.nom = nom;
+        }
+    }
+
+    public ArrayList<Float>getNotes() {
+        return notes;
+    }
 		
 	public static int getContador() {
 		return contador;
