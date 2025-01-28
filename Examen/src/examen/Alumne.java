@@ -18,7 +18,23 @@ public class Alumno {
 	}
 	
 	//Métodos
+	@Override
+	public String toString() {
+        	return "ID: " + id + ", Nom: " + this.nom + ", Notes: " + notes + ", Mitjana: " + calcular_mitjana();
+    	}
 	
+
+	public float calcular_mitjana() {
+        	if (notes.isEmpty()) {
+            	return 0;
+        	}
+        	float suma = 0;
+        	for (float nota : notes) {
+            	suma += nota;
+        	}
+        	return suma / notes.size();
+    	}
+
 	public static float afegir_notes(Scanner teclado, String mensaje) {
 		System.out.print("introduce nota: ");
         float nota = 0; 
@@ -60,28 +76,24 @@ public class Alumno {
 	
 
 	//Getters y Setters
-    public int getId() {
-        return id;
-    }
+    	public int getId() {
+       		return id;
+    	}
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nom) {
-        if (nom !=null && !nom.isEmpty()) {
-            this.nombre = nom;
-        }
-    }
-
-    public ArrayList<Float>getNotas() {
-        return notas;
-    }
-    public void setNotas(ArrayList<Float> notas) {
-    	this.notas = notas;
-    }
+    	public void setNom(String nom) {
+		if (nom !=null && !nom.isEmpty()) {
+           		this.nom = nom;
+        	}
+    	}
     
-    
+   	public String getNom() {
+       		return this.nom;
+    	}
+
+ 	public ArrayList<Float>getNotes() {
+        	return notes;
+ 	   }
+
 	public static int getContador() {
 		return contador;
 	}
