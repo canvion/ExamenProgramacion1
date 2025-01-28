@@ -18,11 +18,33 @@ public class Alumno {
 	}
 	
 	//Métodos
-	public void afegir_nota(ArrayList<Float> notas) {
-		Scanner input = new Scanner(System.in);
-		System.out.println("Introduce la nota");
-	}
 	
+	public static float afegi_notes(Scanner teclado, String mensaje) {
+		System.out.print("introduce nota: ");
+        float nota = 0; 
+        boolean esValida = false; 
+
+        while (!esValida) { 
+            System.out.print(mensaje);
+            nota = teclado.nextFloat(); 
+            if (nota >= 0 && nota <= 10) { 
+                esValida = true; 
+            } else {
+                System.out.println("Error: la nota debe estar entre 0 y 10. Inténtalo de nuevo.");
+            }
+        }
+        return nota; 
+        
+    }
+	    public static float eliminar_notes(Scanner teclado, String mensaje) {
+    boolean esValida = false; 
+    while (!esValida) { 
+    	for(int i=0; i< notes(); i++) {
+    		if (i=teclado) {
+    			
+    		}
+    	}
+    }	
 	
 	
 
