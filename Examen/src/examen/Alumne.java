@@ -3,17 +3,17 @@ package examen;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Alumno {
+public class Alumne {
 	//Atributos
 	private int id;
-	private String nombre;
-	private ArrayList<Float> notas;
+	private String nom;
+	private ArrayList<Float> notes;
 	private static int contador;
 	
 	//Constructores
-	public Alumno(String nombre) {
-		this.setNombre(nombre);
-		Alumno.setContador(this.id);
+	public Alumne(String nom) {
+		this.setNom(nom);
+		Alumne.setContador(this.id);
 	}
 	
 	//Métodos
@@ -78,11 +78,13 @@ public class Alumno {
 	    teclat.close();
 	 
     } 	
-	public static void afegir_alumne(String nombre, ArrayList<Alumno> alumnos) {
-		Alumno alumno = new Alumno(nombre);
+	
+	public static void afegir_alumne(String nombre, ArrayList<Alumne> alumnos) {
+		Alumne alumno = new Alumne(nombre);
 		alumnos.add(alumno);
 		System.out.println("El alumno se ha añadido a la lista correctamente");
 	}
+
 
 	//Getters y Setters
     	public int getId() {
@@ -107,6 +109,7 @@ public class Alumno {
 		return contador;
 	}
 	public static void setContador(int contador) {
-		Alumno.contador = contador + 1;
+		Alumne.contador = contador + 1;
 	}
 }
+
