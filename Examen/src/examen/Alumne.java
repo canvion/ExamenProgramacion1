@@ -13,7 +13,6 @@ public class Alumno {
 	//Constructores
 	public Alumno(String nombre) {
 		this.setNombre(nombre);
-		this.setNotas(null);
 		Alumno.setContador(this.id);
 	}
 	
