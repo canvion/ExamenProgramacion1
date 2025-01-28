@@ -78,6 +78,11 @@ public class Alumno {
 	    teclat.close();
 	 
     } 	
+	public static void afegir_alumne(String nombre, ArrayList<Alumno> alumnos) {
+		Alumno alumno = new Alumno(nombre);
+		alumnos.add(alumno);
+		System.out.println("El alumno se ha añadido a la lista correctamente");
+	}
 
 	//Getters y Setters
     	public int getId() {
