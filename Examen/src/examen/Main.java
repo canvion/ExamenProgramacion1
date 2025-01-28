@@ -1,10 +1,12 @@
 package examen;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
+		ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
 		Scanner input = new Scanner(System.in);
 		boolean end= false;
 		while (!end) {
@@ -18,11 +20,19 @@ public class Main {
 			
 			System.out.println("Escoja una opción: ");
 			int eleccion = input.nextInt();
+			input.nextLine();
 			if (eleccion == 1) {
-				
+				System.out.println("Elige un nombre para el alumno: ");
+				String nombre = input.nextLine();
+				Alumno.afegir_alumne(nombre, alumnos);
+				for (int i = 0; i < alumnos.size(); i++) {
+					System.out.println("Has añadido " + alumnos.get(i).getNombre());
+				}
 			} else if (eleccion == 2) {
-				
+				System.out.println(alumnos.toString());
 			} else if (eleccion == 3) {
+				System.out.print("Introduce la nota a añadir: ");
+				float nota = input.nextFloat();
 				
 			} else if (eleccion == 4) {
 				
