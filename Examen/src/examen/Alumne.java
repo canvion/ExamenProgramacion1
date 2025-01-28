@@ -53,20 +53,24 @@ public class Alumno {
         return id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNom(String nom) {
+    public void setNombre(String nom) {
         if (nom !=null && !nom.isEmpty()) {
-            this.nom = nom;
+            this.nombre = nom;
         }
     }
 
-    public ArrayList<Float>getNotes() {
-        return notes;
+    public ArrayList<Float>getNotas() {
+        return notas;
     }
-		
+    public void setNotas(ArrayList<Float> notas) {
+    	this.notas = notas;
+    }
+    
+    
 	public static int getContador() {
 		return contador;
 	}
